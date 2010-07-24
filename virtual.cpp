@@ -4,13 +4,13 @@ using namespace std;
 
 class A
 {
-public:
-    virtual void foo() { cout << "A::foo() is called" << endl;}
+	public:
+  	virtual void foo() { cout << "A::foo() is called" << endl;}
 };
 
 class B: public A
 {
-public:
+	public:
     virtual void foo() { cout << "B::foo() is called" << endl;}
 };
 
