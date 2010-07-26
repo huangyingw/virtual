@@ -5,20 +5,34 @@ using namespace std;
 class A
 {
 	public:
-  	virtual void foo() { cout << "A::foo() is called" << endl;}
+  	void x() { cout << "class A, function x" << endl;}
+  	virtual void y() { cout << "class A, function y" << endl;}
 };
 
 class B: public A
 {
 	public:
-    virtual void foo() { cout << "B::foo() is called" << endl;}
+    virtual void x() { cout << "class B, function x" << endl;}
+    void y() { cout << "class B, function y" << endl;}
 };
 
-
+class C: public B
+{
+	public:
+    void x() { cout << "class C, function x" << endl;}
+  	void y() { cout << "class C, function y" << endl;}
+};
 int main(void)
 {
-	A * a = new B();
-	//B * b = new A();//error: invalid conversion from ‘A*’ to ‘B*’
-	a->foo();       // 在这里，a虽然是指向A的指针，但是被调用的函数(foo)却是B的!
-
+	A * m = new B();
+	A * n = new C();
+	B * o = new C();
+	
+	m->x();//class A, function x
+	m->y();//class B, function y
+	n->x();//class A, function x
+	n->y();//class C, function y
+	o->x();//class C, function x
+	o->y();//class C, function y
+	
 }
