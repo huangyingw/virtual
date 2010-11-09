@@ -28,11 +28,17 @@ int main(void)
   A * n = new C();
   B * o = new C();
 
-  m->x();//class A, function x
-  m->y();//class B, function y
-  n->x();//class A, function x
-  n->y();//class C, function y
-  o->x();//class C, function x
-  o->y();//class C, function y
+  m->x();// class A, function x
+  m->y();// class B, function y
+  n->x();// class A, function x
+  n->y();// class C, function y
+  o->x();// class C, function x
+  o->y();// class C, function y
 
 }
+
+
+
+
+
+
